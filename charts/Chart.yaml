@@ -1,0 +1,8 @@
+apiVersion: v2
+name: pmcli
+description: Permission manager for kubernetes based on https://github.com/sighupio/permission-manager
+maintainers: 
+  - name: cecep-91
+type: application
+version: 0.0.1
+appVersion: "0.0.1"

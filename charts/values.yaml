@@ -1,0 +1,9 @@
+# Mandatory, used in generating the kubeconfig
+kubernetes:
+  cluster_name: 'default-cluster'
+  control_plane_address: 'https://kubernetes.default.svc'
+
+# Optional, used to send the kubeconfig to telegram group as txt file
+telegram:
+  chat_id: ''
+  bot_api: ''

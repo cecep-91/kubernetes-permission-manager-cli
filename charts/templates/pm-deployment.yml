@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: permission-manager-cli
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: permission-manager-cli
+  template:
+    metadata:
+      labels:
+        app: permission-manager-cli
+    spec:
+      serviceAccountName: permission-manager-cli
+      containers:
+        - name: permission-manager-cli
+          image: ikubaru/k8s-rbac-cli:latest
+          command:
+            - sleep
+            - infinity
+          envFrom:
+            - configMapRef:
+                name: cm-permission-manager-cli

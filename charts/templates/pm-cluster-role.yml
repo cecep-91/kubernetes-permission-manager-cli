@@ -1,0 +1,32 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: permission-manager-cli
+rules:
+  - verbs:
+      - get
+      - list
+      - create
+      - update
+      - delete
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - serviceaccounts
+      - secrets
+  - verbs:
+      - get
+      - list
+      - create
+      - update
+      - delete
+      - bind
+      - watch
+    apiGroups:
+      - rbac.authorization.k8s.io
+    resources:
+      - clusterrolebindings
+      - clusterroles
+      - rolebindings
+      - roles
